@@ -1,5 +1,5 @@
 # variant-classification-ml-django
-a simple ml variant classification model-based application deployed using Django 
+a simple variant classification application in Django 
 
 dataset: https://www.kaggle.com/kevinarvai/clinvar-conflicting
 ```
