@@ -12,8 +12,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
+import joblib
+
 # columns (0,38,40) have mixed types so specifying dtype option while importing
-df = pd.read_csv('clinvar_conflicting.csv', dtype={'CHROM': str, 38: str, 40: object})
+df = pd.read_csv('/Users/kopalgarg/Documents/GitHub/variant-classification-ml-django/clinvar_conflicting.csv', dtype={'CHROM': str, 38: str, 40: object})
 
 # remove null values, and cols with < 1000 unique values
 keep = ['CHROM', 'POS', 'REF', 'ALT', 'AF_ESP', 'AF_EXAC', 'AF_TGP',
@@ -83,3 +85,8 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.25)
 dtree = DecisionTreeClassifier(max_depth = 5)
 dtree.fit(x_train, y_train)
 y_test_pred = dtree.predict(x_test)
+
+print(accuracy_score(y_test, y_test_pred))
+
+# use joblib to save the model
+joblib.dump(dtree, 'final_model.sav')
