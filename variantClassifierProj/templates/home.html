@@ -5,10 +5,27 @@
     <title></title>
   </head>
   <body>
-    <form action="{% url 'result' %}">
+    <form action="{%url 'result' %}" >
+
       {% csrf_token %}
-      <input type = "file" id = "myFile" name = "filename" required>
-      <input type = "submit" name = "" value = "submit">
+
+      CHROM: <input type = "text" required name = "CHROM"> <br> <br>
+      POS: <input type = "number" required name = "POS"> <br> <br>
+      REF: <input type = "text" required name = "REF"> <br> <br>
+      ALT: <input type = "text" required name = "ALT"> <br> <br>
+      AF_ESP: <input step=".01" type = "number" required name = "AF_ESP"> <br> <br>
+      AF_EXAC: <input step=".01" type = "number" required name = "AF_EXAC"> <br> <br>
+      AF_TGP: <input step=".01" type = "number" required name = "AF_TGP"> <br> <br>
+      CLNVC: <input type = "text" required name = "CLNVC"> <br> <br>
+      CLASS: <input type = "number" required name = "CLASS"> <br> <br>
+      SIFT: <input type = "text" required name = "SIFT"> <br> <br>
+      Allele: <input type = "text" required name = "Allele"> <br> <br>
+      Consequence: <input type = "text" required name = "Consequence"> <br> <br>
+      IMPACT: <input type = "text" required name = "IMPACT"> <br> <br>
+      CADD_PHRED: <input step=".01" type = "number" required name = "CADD_PHRED"> <br> <br>
+      CADD_RAW: <input step=".01" type = "number" required name = "CADD_RAW"> <br> <br>
+
+      <input type="submit" name="" value="submit">
     </form>
   </body>
 </html>
