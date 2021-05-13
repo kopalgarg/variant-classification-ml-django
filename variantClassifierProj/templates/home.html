@@ -5,6 +5,10 @@
     <title></title>
   </head>
   <body>
-    This is the home page.
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      <input type = "file" id = "myFile" name = "filename" required>
+      <input type = "submit" name = "" value = "submit">
+    </form>
   </body>
 </html>
